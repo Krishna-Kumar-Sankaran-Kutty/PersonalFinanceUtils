@@ -93,13 +93,13 @@ fund_choices = [
 iface = gr.Interface(
     fn=generate_treemap,
     inputs=[
-        gr.Markdown("# MF Portfolio Analysis #"),
-        gr.Markdown("## Created by KK ##"),
         gr.Dropdown(choices=fund_choices, label="Fund 1"),
         gr.Dropdown(choices=fund_choices, label="Fund 2"),
         gr.Dropdown(choices=fund_choices, label="Fund 3")
 ],
-    outputs=gr.Plot()
+    outputs=gr.Plot(),
+    #flagging_dir=None  # Turn off flagging
+    flagging_dir="/tmp/flagged"  # Set the flagging directory to a writable location
 )
 
-iface.launch()
+iface.launch(server_name="0.0.0.0", server_port=7860)

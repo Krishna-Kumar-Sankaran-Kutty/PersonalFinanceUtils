@@ -1,2 +1,5 @@
 beautifulsoup4
 plotly.express
+gradio
+requests
+pandas
